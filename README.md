@@ -1,1 +1,1 @@
-# stripe-with-java-spring-boot-main
+# stripe-with-java-spring-boot
