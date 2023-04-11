@@ -1,11 +1,11 @@
-package com.talenteddeveloper.stripepayment.controller;
+package com.demo.stripepayment.controller;
 
+import com.demo.stripepayment.util.StripeUtil;
 import com.stripe.Stripe;
 import com.stripe.exception.StripeException;
 import com.stripe.model.Customer;
 import com.stripe.model.CustomerCollection;
-import com.talenteddeveloper.stripepayment.model.CustomerData;
-import com.talenteddeveloper.stripepayment.util.StripeUtil;
+import com.demo.stripepayment.model.CustomerData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;

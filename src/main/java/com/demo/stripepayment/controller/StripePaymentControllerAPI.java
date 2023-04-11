@@ -1,10 +1,11 @@
-package com.talenteddeveloper.stripepayment.controller;
+package com.demo.stripepayment.controller;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.demo.stripepayment.util.StripeUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,8 +17,7 @@ import com.stripe.Stripe;
 import com.stripe.exception.StripeException;
 import com.stripe.model.Customer;
 import com.stripe.model.CustomerCollection;
-import com.talenteddeveloper.stripepayment.model.CustomerData;
-import com.talenteddeveloper.stripepayment.util.StripeUtil;
+import com.demo.stripepayment.model.CustomerData;
 
 @RestController
 @RequestMapping("/api")
@@ -27,7 +27,7 @@ public class StripePaymentControllerAPI {
 	String stripeKey;
 
 	@Autowired
-	StripeUtil stripeUtil;
+    StripeUtil stripeUtil;
 	
 	@RequestMapping("/createCustomer")
 	public CustomerData createCustomer(@RequestBody CustomerData data) throws StripeException {

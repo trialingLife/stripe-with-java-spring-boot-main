@@ -1,4 +1,4 @@
-package com.talenteddeveloper.stripepayment.util;
+package com.demo.stripepayment.util;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import com.stripe.Stripe;
 import com.stripe.exception.StripeException;
 import com.stripe.model.Customer;
-import com.talenteddeveloper.stripepayment.model.CustomerData;
+import com.demo.stripepayment.model.CustomerData;
 
 @Component
 public class StripeUtil {

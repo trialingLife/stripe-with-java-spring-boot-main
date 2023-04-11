@@ -1,9 +1,8 @@
-package com.talenteddeveloper.stripepayment.controller;
+package com.demo.stripepayment.controller;
 
 import com.stripe.exception.StripeException;
-import com.stripe.model.Subscription;
-import com.talenteddeveloper.stripepayment.model.SubscriptionDto;
-import com.talenteddeveloper.stripepayment.service.SubscriptionService;
+import com.demo.stripepayment.model.SubscriptionDto;
+import com.demo.stripepayment.service.SubscriptionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,5 +23,9 @@ public class StripeSubscriptionController {
         System.out.println("Reached");
         return subscriptionService.save(subscriptionDto);
     }
-
+    @PostMapping(value = "/{subscription_id}/cancel",produces = "application/json")
+    public String save(@PathVariable("subscription_id") final String subscriptionId) throws StripeException {
+        System.out.println("Reached");
+        return subscriptionService.cancel(subscriptionId);
+    }
 }

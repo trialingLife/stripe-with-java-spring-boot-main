@@ -1,10 +1,11 @@
-package com.talenteddeveloper.stripepayment.service;
+package com.demo.stripepayment.service;
 
 import com.stripe.Stripe;
 import com.stripe.exception.StripeException;
 import com.stripe.model.Subscription;
 import com.stripe.param.SubscriptionCreateParams;
-import com.talenteddeveloper.stripepayment.model.SubscriptionDto;
+import com.stripe.param.SubscriptionUpdateParams;
+import com.demo.stripepayment.model.SubscriptionDto;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -34,6 +35,19 @@ public class SubscriptionService {
         Subscription subscription = Subscription.create(params);
 
         System.out.println("Subscription ::"+subscription);
+        return subscription.toJson();
+    }
+
+    public String cancel(String subscriptionId) throws StripeException {
+        Stripe.apiKey = stripeKey;
+        Subscription resource = Subscription.retrieve(subscriptionId);
+        SubscriptionUpdateParams params =
+                SubscriptionUpdateParams
+                        .builder()
+                        .setTrialEnd(SubscriptionUpdateParams.TrialEnd.NOW)
+                        .build();
+
+        Subscription subscription = resource.update(params);
         return subscription.toJson();
     }
 }

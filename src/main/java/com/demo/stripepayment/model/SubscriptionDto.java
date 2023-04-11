@@ -1,4 +1,4 @@
-package com.talenteddeveloper.stripepayment.model;
+package com.demo.stripepayment.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
